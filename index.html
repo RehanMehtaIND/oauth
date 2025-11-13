@@ -3,10 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel = "stylesheet" href = "style.css">
+    <title>Focus Manager+</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src = "script.js"></script>
+    <section id="MainPage">
+        <nav id="navBar">
+            <button id="expenseButton">EXPENSE</button>
+            <button id="tasksButton">TASKS</button>
+            <button id="pomodoroButton">POMODORO</button>
+            <button id="chillButton">CHILL</button>
+        </nav>
+
+        <section id="Clock">
+            <h2 id="ClockTime">00:00:00</h2>
+        </section>
+
+        <section id="POMODORO" class="content-section">
+            <h1>POMODORO TIMER</h1>
+            <div class="pomodoro-container">
+                <h2 id="timer">25:00</h2>
+                <div class="pomodoro-controls">
+                    <button id="startBtn">START</button>
+                    <button id="pauseBtn">PAUSE</button>
+                    <button id="resetBtn">RESET</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="TASKS" class="content-section">
+            <h1>TASK LIST</h1>
+            <div class="task-box">
+                <input type="text" id="taskInput" placeholder="Add a new task...">
+                <button id="addTaskBtn">Add</button>
+                <ul id="taskList"></ul>
+            </div>
+        </section>
+
+        <section id="EXPENSE" class="content-section">
+            <h1>EXPENSE & INCOME TRACKER</h1>
+            <div class="expense-box">
+                <select id="typeSelect">
+                    <option value="expense">Expense</option>
+                    <option value="income">Income</option>
+                </select>
+                <input type="text" id="expenseName" placeholder="Description">
+                <input type="number" id="expenseAmount" placeholder="Amount">
+                <button id="addExpenseBtn">Add</button>
+                <ul id="expenseList"></ul>
+                <h3 id="balanceDisplay">Balance: ₹0</h3>
+            </div>
+        </section>
+
+        <section id="CHILL" class="content-section">
+            <h1>CHILL PLACE</h1>
+            <p>Relax and vibe — connect your Spotify 🎵</p>
+            <div id="spotifySection">
+                <button id="connectSpotify">Connect Spotify</button>
+                <div id="spotifyContainer"></div>
+                <iframe id="spotifyFrame" style="border-radius:12px" width="80%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
+        </section>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
