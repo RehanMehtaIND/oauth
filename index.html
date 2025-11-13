@@ -1,71 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Focus Manager+</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Manager+</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section id="MainPage">
-        <nav id="navBar">
-            <button id="expenseButton">EXPENSE</button>
-            <button id="tasksButton">TASKS</button>
-            <button id="pomodoroButton">POMODORO</button>
-            <button id="chillButton">CHILL</button>
-        </nav>
+  <section id="MainPage">
+    <nav id="navBar">
+      <button id="expenseButton">EXPENSE</button>
+      <button id="tasksButton">TASKS</button>
+      <button id="pomodoroButton">POMODORO</button>
+      <button id="chillButton">CHILL</button>
+    </nav>
 
-        <section id="Clock">
-            <h2 id="ClockTime">00:00:00</h2>
-        </section>
-
-        <section id="POMODORO" class="content-section">
-            <h1>POMODORO TIMER</h1>
-            <div class="pomodoro-container">
-                <h2 id="timer">25:00</h2>
-                <div class="pomodoro-controls">
-                    <button id="startBtn">START</button>
-                    <button id="pauseBtn">PAUSE</button>
-                    <button id="resetBtn">RESET</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="TASKS" class="content-section">
-            <h1>TASK LIST</h1>
-            <div class="task-box">
-                <input type="text" id="taskInput" placeholder="Add a new task...">
-                <button id="addTaskBtn">Add</button>
-                <ul id="taskList"></ul>
-            </div>
-        </section>
-
-        <section id="EXPENSE" class="content-section">
-            <h1>EXPENSE & INCOME TRACKER</h1>
-            <div class="expense-box">
-                <select id="typeSelect">
-                    <option value="expense">Expense</option>
-                    <option value="income">Income</option>
-                </select>
-                <input type="text" id="expenseName" placeholder="Description">
-                <input type="number" id="expenseAmount" placeholder="Amount">
-                <button id="addExpenseBtn">Add</button>
-                <ul id="expenseList"></ul>
-                <h3 id="balanceDisplay">Balance: ₹0</h3>
-            </div>
-        </section>
-
-        <section id="CHILL" class="content-section">
-            <h1>CHILL PLACE</h1>
-            <p>Relax and vibe — connect your Spotify 🎵</p>
-            <div id="spotifySection">
-                <button id="connectSpotify">Connect Spotify</button>
-                <div id="spotifyContainer"></div>
-                <iframe id="spotifyFrame" style="border-radius:12px" width="80%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            </div>
-        </section>
+    <section id="Clock">
+      <h2 id="ClockTime">00:00:00</h2>
     </section>
 
-    <script src="script.js"></script>
+    <section id="POMODORO" class="content-section">
+      <h1>POMODORO TIMER</h1>
+      <div class="pomodoro-container">
+        <h2 id="timer">25:00</h2>
+        <div class="pomodoro-controls">
+          <button id="startBtn">START</button>
+          <button id="pauseBtn">PAUSE</button>
+          <button id="resetBtn">RESET</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="TASKS" class="content-section">
+      <h1>TASK LIST</h1>
+      <div class="task-box">
+        <input type="text" id="taskInput" placeholder="Add a new task...">
+        <button id="addTaskBtn">Add</button>
+        <ul id="taskList"></ul>
+      </div>
+    </section>
+
+    <section id="EXPENSE" class="content-section">
+      <h1>EXPENSE & INCOME TRACKER</h1>
+      <div class="expense-box">
+        <select id="typeSelect">
+          <option value="expense">Expense</option>
+          <option value="income">Income</option>
+        </select>
+        <input type="text" id="expenseName" placeholder="Description">
+        <input type="number" id="expenseAmount" placeholder="Amount">
+        <button id="addExpenseBtn">Add</button>
+        <ul id="expenseList"></ul>
+        <h3 id="balanceDisplay">Balance: ₹0</h3>
+      </div>
+    </section>
+
+    <section id="CHILL" class="content-section">
+      <h1>CHILL PLACE</h1>
+      <p>Relax and vibe — connect your Spotify 🎵</p>
+
+      <div id="spotifySection">
+        <button id="connectSpotify">Connect Spotify</button>
+        <div id="spotifyContainer"></div>
+
+        <div id="playerControls" style="display:none;">
+          <div id="trackInfo"></div>
+          <div id="controls">
+            <button id="prevTrack">⏮️</button>
+            <button id="playPause">⏯️</button>
+            <button id="nextTrack">⏭️</button>
+          </div>
+          <input type="range" id="seekBar" min="0" max="100" value="0">
+          <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="0.5">
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <script src="https://sdk.scdn.co/spotify-player.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
