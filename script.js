@@ -134,7 +134,7 @@ function updateBalance() {
 
 // SPOTIFY FULL PLAYER
 const CLIENT_ID = "adb1a8fad0eb4ca586aae5755ff27123"; // from Spotify Developer Dashboard
-const REDIRECT_URI = "https://rehanmehtaind.github.io/"; // or your site
+const REDIRECT_URI = "https://rehanmehtaind.github.io/oauth/"; // or your site
 const SCOPES = "streaming user-read-email user-read-private user-read-playback-state user-modify-playback-state playlist-read-private playlist-read-collaborative";
 
 let player, deviceId;
@@ -249,3 +249,4 @@ document.getElementById("volumeBar").oninput = e => player.setVolume(parseFloat(
 getAccessToken().then(token => {
   if (token) loadUserPlaylists();
 });
+
